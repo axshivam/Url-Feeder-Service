@@ -1,0 +1,22 @@
+Steps during the whole process
+===========================================
+
+Using Mysql Database for storing the data for which I will simply use docker 
+
+-> docker pull mysql
+-> docker run --name my-url-project -e MYSQL_ROOT_PASSWORD=root -d -p 127.0.0.1:3309:3306 mysql
+-> docker exec -it url-project bash
+-> mysql -u root -p
+-> select user,host from mysql.user;  -> Check for privileges
+-> update mysql.user set host='%' where user='root';
+-> flush privileges;
+-> show databases;
+-> create database urlfeederservice; # Database for my service
+
+for connecting from the outside of the container
+-> mysql -u root -p -P3309 -h127.0.0.1
+
+
+
+
+
