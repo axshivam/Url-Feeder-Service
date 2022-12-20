@@ -5,7 +5,7 @@ Steps during the whole process
 
 -> docker pull mysql
 -> docker run --name my-url-project -e MYSQL_ROOT_PASSWORD=root -d -p 127.0.0.1:3309:3306 mysql
--> docker exec -it url-project bash
+-> docker exec -it my-url-project bash
 -> mysql -u root -p
 -> select user,host from mysql.user;  -> Check for privileges
 -> update mysql.user set host='%' where user='root';
@@ -19,6 +19,14 @@ for connecting from the outside of the container
 
 
 2. Dockerizing the existing application
+-> docker build -t axshivam/url_feeder_service
+-> docker run -d -p 3000:3000 a1233fc95377
+
+3. Connecting the both container
+-> docker inspect my-url-project (database container)
+and pick the ip of the container and connect database with that ip
+
+
 
 
 

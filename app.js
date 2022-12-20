@@ -25,10 +25,6 @@ app.post('/ping', (req, res) => {
     const { url } = req.body;
     const current_date = Date.now().toString();
 
-    console.log(url, current_date);
-
-    const id = 1;
-
     const database_query = `Insert into url_collection(url, created_date) values('${url}', '${current_date}')`;
 
     connection.query(database_query, (err, result) => {
