@@ -1,7 +1,7 @@
 Steps during the whole process
 ===========================================
 
-Using Mysql Database for storing the data for which I will simply use docker 
+1. I am using Mysql Database for storing the data for which I will simply use docker 
 
 -> docker pull mysql
 -> docker run --name my-url-project -e MYSQL_ROOT_PASSWORD=root -d -p 127.0.0.1:3309:3306 mysql
@@ -15,6 +15,17 @@ Using Mysql Database for storing the data for which I will simply use docker
 
 for connecting from the outside of the container
 -> mysql -u root -p -P3309 -h127.0.0.1
+
+
+
+2. Dockerizing the existing application
+
+
+
+
+
+
+
 
 
 

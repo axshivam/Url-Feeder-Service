@@ -20,10 +20,27 @@ app.get('/ping', (req, res) => {
 });
 
 app.post('/ping', (req, res) => {
-    console.log(`Request Body -> ${req.body}`);
 
-    res.status(201).send({message: req.body});
-})
+    // data persistence logic
+    const { url } = req.body;
+    const current_date = Date.now().toString();
+
+    console.log(url, current_date);
+
+    const id = 1;
+
+    const database_query = `Insert into url_collection(url, created_date) values('${url}', '${current_date}')`;
+
+    connection.query(database_query, (err, result) => {
+        if(err) {
+            console.log(`Error: `, err);
+        } else {
+            console.log('Database result: ', result);
+        }
+    });
+
+    res.status(201).send({message: `Url added successfully!`});
+});
 
 app.listen(PORT, (err) => {
     if(err) {
