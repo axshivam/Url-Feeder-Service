@@ -1,0 +1,11 @@
+{
+  "name": "url-feeder-service",
+  "version": "1.0.0",
+  "description": "A Url Feeder application using all concepts of system design.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Shiv Sharma",
+  "license": "ISC"
+}
