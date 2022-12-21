@@ -5,7 +5,7 @@ const { Kafka } = require("kafkajs");
 
 async function consume() {
     const kafka = new Kafka({
-        clientId: "player-jersey-1",
+        clientId: "url-setup-1",
         brokers: ["127.0.0.1:9092"],
     });
 
@@ -14,7 +14,7 @@ async function consume() {
     console.log("Consumer connected");
 
     await consumer.subscribe({
-        topic: "jersey1",
+        topic: "url",
         fromBeginning: true,
     });
 
@@ -25,7 +25,7 @@ async function consume() {
             // 3. message
 
             console.log(
-                `To Partition ${partition} -> message ${message.value.toString()}`
+                `To Partition ${partition} -> message ${message.value.toString()} in ${topic}`
             );
         },
     });

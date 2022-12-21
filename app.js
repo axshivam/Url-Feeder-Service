@@ -6,6 +6,8 @@ const app = express();
 
 const createDatabaseConnection = require('./database/config');
 
+const produce = require('./kafka/producer/index');
+
 const PORT = process.env.APP_PORT;
 
 
@@ -34,6 +36,8 @@ app.post('/ping', (req, res) => {
             console.log('Database result: ', result);
         }
     });
+
+    produce(req.url);
 
     res.status(201).send({message: `Url added successfully!`});
 });
