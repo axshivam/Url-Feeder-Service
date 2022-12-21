@@ -4,13 +4,17 @@
   "description": "A Url Feeder application using all concepts of system design.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "start:consumer": "node ./kafka/consumer/index.js",
+    "start:producer": "node ./kafka/producer/index.js"
   },
   "author": "Shiv Sharma",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "kafka-node": "^5.0.0",
+    "kafkajs": "^2.2.3",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
