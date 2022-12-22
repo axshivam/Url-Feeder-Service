@@ -16,4 +16,4 @@ app.listen(PORT, (err) => {
     } else {
         console.log(`App is running at ${PORT}`);
     }
-})
+});

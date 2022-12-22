@@ -1,5 +1,7 @@
 const is_url = require('./utils/validate_url');
 
+const fetchingData = require('./utils/fetch-details');
+
 
 const { Kafka } = require("kafkajs");
 
@@ -24,6 +26,10 @@ async function consume() {
             // 2. partition
             // 3. message
             if(is_url(message.value.toString())) {
+                const fetched_details = await fetchingData(message.value.toString());
+
+                console.log('Fetched Details ==>> ', fetched_details);
+
                 console.log(
                     `To Partition ${partition} -> message ${message.value.toString()} in ${topic}`
                 );
