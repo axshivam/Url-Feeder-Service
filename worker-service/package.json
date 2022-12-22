@@ -4,11 +4,13 @@
   "description": "A service of consuming data from the topic.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "start:api": "nodemon api/app.js"
   },
   "author": "Shiv Sharma",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "kafkajs": "^2.2.3"
   },
   "devDependencies": {

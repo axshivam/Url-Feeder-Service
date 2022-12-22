@@ -1,4 +1,4 @@
-console.log('Consumer....');
+const is_url = require('./utils/validate_url');
 
 
 const { Kafka } = require("kafkajs");
@@ -23,10 +23,13 @@ async function consume() {
             // 1. topic
             // 2. partition
             // 3. message
-
-            console.log(
-                `To Partition ${partition} -> message ${message.value.toString()} in ${topic}`
-            );
+            if(is_url(message.value.toString())) {
+                console.log(
+                    `To Partition ${partition} -> message ${message.value.toString()} in ${topic}`
+                );
+            } else {
+                console.log(`Invalid Url in ${topic}`);
+            }
         },
     });
 }
