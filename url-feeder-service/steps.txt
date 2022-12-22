@@ -74,4 +74,9 @@ Kafka Setup Commands with zookeeper
 -> docker-compose start
 -> docker-compose stop
 
+TODO
+================
+jmeter
+check url exist or not
+
 
