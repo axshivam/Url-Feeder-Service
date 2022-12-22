@@ -23,6 +23,9 @@ app.get('/ping', (req, res) => {
 
 app.post('/ping', (req, res) => {
 
+    // getting the whole url
+    // const whole_url = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+
     // data persistence logic
     const { url } = req.body;
     const current_date = Date.now().toString();
@@ -37,7 +40,7 @@ app.post('/ping', (req, res) => {
         }
     });
 
-    produce(req.url);
+    produce(url);
 
     res.status(201).send({message: `Url added successfully!`});
 });
